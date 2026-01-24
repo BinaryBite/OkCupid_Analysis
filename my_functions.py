@@ -1,7 +1,18 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def vc_hist(data, x):
+def find_outliers(df, columns):
+    Q1 = df[columns].quantile(0.25)
+    Q3 = df[columns].quantile(0.75)
+    IQR = Q3 - Q1
+
+    outliers = (df[columns] < (Q1 - 1.5 * IQR)) | \
+           (df[columns] > (Q3 + 1.5 * IQR))
+
+    return outliers
+
+
+def vc_bar(data, x):
     plt.figure(figsize=(10,6), dpi=80)
 
     ax = sns.countplot(data = data, x = x, hue = x)
