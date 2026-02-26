@@ -1,7 +1,7 @@
-# Predicting Medical Proffessionals From OkCupid Profile Data
+# Predicting Medical Professionals From OkCupid Profile Data
 
 ## Problem Statement
-Presented with a dataset of users self-reported characteristics taken from a dating platform, can we build a binary classifier model that will predict whether a user works in the medical profession?
+Presented with a dataset of users' self-reported characteristics taken from a dating platform, can we build a binary classifier model that will predict whether a user works in the medical profession?
 
 ## Data
 The dataset used is the OkCupid Dataset available [here](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles).
@@ -21,7 +21,7 @@ It should also be noted that the target variable exhibits significant class imba
 ### Performance Measure
 As the problem is a classification problem, the performance measures chosen are:
 1. Confusion Matrix
-2. Reciver Operating Characteristic (ROC) Curve - Area under the curve (AUC)
+2. Receiver Operating Characteristic (ROC) Curve - Area under the curve (AUC)
 
 Due to the class imbalance accuracy will not be used as a metric as it would overstate performance by favoring the majority class.
 
@@ -45,21 +45,21 @@ To reproduce results:
 
 ## Results
 
-All models demonstrated comparable performance after hyperparamter optimization using GridSearchCV.
+All models demonstrated comparable performance after hyperparameter optimization using GridSearchCV.
 
 Final AUC's on the Test Set:
-Stochastic Graident Descent: 0.669
+Stochastic Gradient Descent: 0.669
 Random Forest Classifier: 0.684
 K-Nearest Neighbor: 0.650
 
-## Constraints / Limitiations
+## Constraints / Limitations
 
-1. **Weak feature signal** - The ROC curves and modest AUC values suggest that the features used contain limitied predictive information about the target. This is replicated across models
+1. **Weak feature signal** - The ROC curves and modest AUC values suggest that the features used contain limited predictive information about the target. This is replicated across models
 2. **High Class Overlap** - Threshold tuning yielded limited gains suggesting the positive and negative classes overlap heavily in feature space.
-3. **Class Imbalance** - Models collapsed to predicting majority class if balanced weighting was not used.
-4. **Noisy Categorical Variables** - High cardinality and self reported categorical feautres introduced considerable noise.
-5. **Cross-secitonal data** - The dataset does not support causal inference.
-6. **Evaluation Scope** - The problem was not focused around a specific business objective. The ROC and AUC measures used did not have a cost-senstive threshold selection and utility-based evaluation was not possible.
+3. **Class Imbalance** - Models collapsed to predicting the majority class if balanced weighting was not used.
+4. **Noisy Categorical Variables** - High cardinality and self reported categorical features introduced considerable noise.
+5. **Cross-sectional data** - The dataset does not support causal inference.
+6. **Evaluation Scope** - The problem was not focused around a specific business objective. The ROC and AUC measures used did not have a cost-sensitive threshold selection and utility-based evaluation was not possible.
 
 ## Conclusion
 
