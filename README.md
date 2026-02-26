@@ -1,7 +1,7 @@
 # Predicting Medical Proffessionals From OkCupid Profile Data
 
 ## Problem Statement
-Presented with a dataset of self reported of users self-reported characteristics taken from a dating platform, can we build a binary classifier model that will predict whether a user works in the medical profession?
+Presented with a dataset of users self-reported characteristics taken from a dating platform, can we build a binary classifier model that will predict whether a user works in the medical profession?
 
 ## Data
 The dataset used is the OkCupid Dataset available [here](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles).
